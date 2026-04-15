@@ -183,40 +183,22 @@
 
   /* ── Build card inside .hero-card ───────────────────────── */
   function buildCard() {
-    const mount = document.getElementById("achievementsMount");
-if (!mount) {
-  console.warn("[achievements] #achievementsMount not found");
-  return false;
-}
+ const mount = document.getElementById("achievementsMount");
+  if (!mount) {
+    console.warn("[achievements] #achievementsMount not found");
+    return false;
+  }
 
-mount.innerHTML = `
-  <section class="achievements-widget" id="achievementsWidget" aria-label="achievements">
-    <div class="achievements-header">
-      <h2>achievements</h2>
-    </div>
+  // Clear any existing content
+  mount.innerHTML = "";
 
-    <div class="achievements-slider" id="achievementsSlider" tabindex="0"
-      aria-roledescription="carousel"
-      aria-label="achievement certificates slideshow">
-      <div class="achievements-track" id="achievementsTrack" aria-live="polite"></div>
+  // Create the widget container
+  const heroCard = document.createElement("section");
+  heroCard.className = "achievements-widget ach-card";
+  heroCard.id = "achievementsWidget";
+  heroCard.setAttribute("aria-label", "achievements");
 
-      <button class="achievements-nav achievements-prev" id="achievementsPrev" type="button" aria-label="Previous achievement">
-        <span aria-hidden="true">&#10094;</span>
-      </button>
-
-      <button class="achievements-nav achievements-next" id="achievementsNext" type="button" aria-label="Next achievement">
-        <span aria-hidden="true">&#10095;</span>
-      </button>
-    </div>
-
-    <div class="achievements-dots" id="achievementsDots" role="tablist"
-      aria-label="achievement slide indicators"></div>
-  </section>
-`;
-
-const heroCard = document.getElementById("achievementsWidget");
-heroCard.classList.add("ach-card");
-
+  mount.appendChild(heroCard);
     /* Title */
     const title = document.createElement("h2");
     title.className   = "ach-card-title";
