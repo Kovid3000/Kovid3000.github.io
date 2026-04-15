@@ -13,8 +13,8 @@
   const AUTO_MS = 3500;
 
   const imgs = Array.from({ length: TOTAL }, (_, i) => ({
-    src: `Achievements/Kovid's Achievements_${i + 1}.jpg`,
-    alt: `Kovid's Achievement ${i + 1}`,
+    src: `achievements/Kovid's achievements_${i + 1}.jpg`,
+    alt: `Kovid's achievement ${i + 1}`,
   }));
 
   /* ── Styles ──────────────────────────────────────────────── */
@@ -192,14 +192,14 @@
     /* Title */
     const title = document.createElement("h2");
     title.className   = "ach-card-title";
-    title.textContent = "Achievements";
+    title.textContent = "achievements";
     heroCard.appendChild(title);
 
     /* Slideshow frame */
     const frame = document.createElement("div");
     frame.className = "ach-frame";
     frame.setAttribute("role", "img");
-    frame.setAttribute("aria-label", "Achievement slideshow – tap to enlarge");
+    frame.setAttribute("aria-label", "achievement slideshow – tap to enlarge");
 
     imgEls = imgs.map((item, idx) => {
       const el     = document.createElement("img");
