@@ -1,0 +1,19 @@
+{
+  "name": "Kovid Dutt Sharma | Breaking Bad Portfolio",
+  "short_name": "Kovid Portfolio",
+  "description": "Interactive Breaking Bad-inspired personal portfolio of Kovid Dutt Sharma.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#041004",
+  "theme_color": "#052405",
+  "lang": "en",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

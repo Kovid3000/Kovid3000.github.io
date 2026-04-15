@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kovid portfolio icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f3d0f" />
+      <stop offset="1" stop-color="#052405" />
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b4ffb4" />
+      <stop offset="1" stop-color="#31a94f" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)" />
+  <rect x="90" y="90" width="332" height="332" rx="44" fill="none" stroke="#6eff6e" stroke-width="16" />
+  <rect x="128" y="128" width="148" height="148" rx="18" fill="url(#tile)" stroke="#d8ffd8" stroke-width="8" />
+  <text x="202" y="220" text-anchor="middle" font-size="74" font-family="Orbitron, Arial, sans-serif" font-weight="800" fill="#032203">Ko</text>
+  <text x="290" y="330" font-size="92" font-family="Orbitron, Arial, sans-serif" font-weight="700" fill="#dfffe0">D</text>
+  <circle cx="364" cy="154" r="12" fill="#9dff9d" />
+  <circle cx="390" cy="184" r="8" fill="#77ff77" />
+  <circle cx="344" cy="184" r="6" fill="#aaffaa" />
+</svg>
