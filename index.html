@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Interactive Breaking Bad-inspired personal portfolio of Kovid Dutt Sharma." />
+  <meta name="keywords" content="Kovid Dutt Sharma, portfolio, Breaking Bad, biotechnology, student profile" />
+  <meta name="theme-color" content="#052405" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta property="og:title" content="Kovid Dutt Sharma | Breaking Bad Portfolio" />
+  <meta property="og:description" content="Breaking Bad-themed interactive portfolio with chemistry visuals and animations." />
+  <meta property="og:type" content="website" />
+  <title>Kovid Dutt Sharma | Breaking Bad Portfolio</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="achievements.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <div class="loader-lab">
+      <div class="beaker" aria-hidden="true">
+        <div class="beaker-liquid"></div>
+        <span class="beaker-bubble bubble-1"></span>
+        <span class="beaker-bubble bubble-2"></span>
+        <span class="beaker-bubble bubble-3"></span>
+      </div>
+      <p>Synthesizing Profile...</p>
+    </div>
+  </div>
+
+  <div id="particles-js" aria-hidden="true"></div>
+  <div class="smoke-layer" aria-hidden="true"></div>
+
+  <div class="chem-bg" aria-hidden="true">
+    <span class="chem formula-1">C<sub>2</sub>H<sub>5</sub>OH</span>
+    <span class="chem formula-2">NaCl</span>
+    <span class="chem formula-3">H<sub>2</sub>SO<sub>4</sub></span>
+    <span class="chem formula-4">Fe + O<sub>2</sub></span>
+    <span class="chem formula-5">He</span>
+    <span class="chem formula-6">Zn</span>
+  </div>
+
+  <header class="site-header glass" data-aos="fade-down">
+    <a href="#hero" class="logo" aria-label="Go to top">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">Kovid Lab</span>
+      <span class="logo-cursor">_</span>
+      <span class="logo-bracket">]</span>
+    </a>
+    <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="primaryNav" class="main-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#biodata">Biodata</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <button id="soundToggle" class="nav-action" type="button" aria-pressed="true">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+        <span>Sound On</span>
+      </button>
+      <button id="shareBtn" class="nav-action nav-share" type="button">
+        <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+        <span>Share</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" class="hero section">
+      <div class="hero-grid">
+        <div class="hero-content" data-aos="fade-right">
+          <p class="hero-kicker">Personal Portfolio</p>
+          <p class="status-pill"><span class="status-dot"></span>Currently focusing on Biology, Genetics, and Biotechnology fundamentals</p>
+          <h1 class="periodic-name" aria-label="Kovid Dutt Sharma">
+            <span class="name-piece">
+              <span class="tile">Ko</span><span class="rest">vid</span>
+            </span>
+            <span class="name-piece">
+              <span class="tile">Du</span><span class="rest">tt</span>
+            </span>
+            <span class="name-piece">
+              <span class="tile">Sh</span><span class="rest">arma</span>
+            </span>
+          </h1>
+          <p class="tagline">Crafting My Identity with Precision and Passion.</p>
+          <p id="typed-target" class="typed-line" aria-live="polite"></p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn ripple-btn">Contact Me</a>
+            <a href="#about" class="btn btn-secondary ripple-btn">Explore More</a>
+            <button id="heroShareBtn" class="btn btn-secondary ripple-btn hero-share-btn" type="button">Share This Portfolio</button>
+          </div>
+        </div>
+
+        <aside class="hero-card glass-card" data-aos="fade-left">
+          <div class="bb-visual-frame" id="bbVisualFrame" aria-label="Breaking Bad visual slider">
+            <img class="bb-slide is-active" src="images/bb-custom-name.png?v=2" alt="Breaking Bad-inspired Kovid name design" loading="eager" />
+            <img class="bb-slide" src="images/bb-heisenberg.png?v=2" alt="Heisenberg sketch sticker style artwork" loading="lazy" />
+            <img class="bb-slide" src="images/bb-science-cat.png?v=2" alt="Science cat sticker with lab goggles" loading="lazy" />
+            <div class="bb-slide-dots" id="bbDots" aria-hidden="true">
+              <span class="dot is-active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <h2>Chemistry of Character</h2>
+          <p>Combining discipline, curiosity, and long-term vision to build a future in Biotechnology.</p>
+          <ul>
+            <li><strong>Name:</strong> Kovid Dutt Sharma</li>
+            <li><strong>DOB:</strong> 10 August 2007</li>
+            <li><strong>School:</strong> St. Anjani's Public School</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="block-header-wrapper section-title" data-aos="fade-up">
+        <h2 class="block-header-title"><span class="block-header-marker">></span> About Me</h2>
+        <div class="block-header-line"></div>
+      </div>
+      <article class="section-card glass-card" data-aos="fade-up" data-aos-delay="120">
+        <p>
+          I am Kovid Dutt Sharma, a focused learner who enjoys combining analytical thinking with creativity.
+          I stay active through music, chess, games, and sports, and these interests help me stay disciplined and mentally sharp.
+        </p>
+        <p class="about-paragraph">
+          Right now, I am strengthening my understanding of Biology, Chemistry, and core scientific concepts through regular study and self-learning.
+          I am especially interested in Biotechnology at a deep level, and my long-term goal is to become a Genetic Engineer and build a professional career in that field.
+        </p>
+      </article>
+
+      <div class="focus-grid" data-aos="fade-up" data-aos-delay="180">
+        <article class="section-card focus-card">
+          <h3>What I Am Doing Now</h3>
+          <p>Building strong fundamentals in Biology and lab-related concepts, while improving focus, consistency, and problem-solving skills.</p>
+        </article>
+        <article class="section-card focus-card">
+          <h3>What I Want To Become</h3>
+          <p>I want to study Biotechnology deeply and become a Genetic Engineer who works on meaningful scientific innovation.</p>
+        </article>
+      </div>
+
+      <div class="bb-image-strip" data-aos="zoom-in-up" data-aos-delay="220">
+        <figure class="strip-card"><img src="images/bb-custom-name.png?v=2" alt="Breaking Bad-inspired Kovid name image" loading="lazy" /></figure>
+        <figure class="strip-card"><img src="images/bb-heisenberg.png?v=2" alt="Heisenberg sticker style image" loading="lazy" /></figure>
+        <figure class="strip-card"><img src="images/bb-science-cat.png?v=2" alt="Breaking Bad science cat image" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <section id="biodata" class="section">
+      <div class="block-header-wrapper section-title" data-aos="fade-up">
+        <h2 class="block-header-title"><span class="block-header-marker">></span> Biodata</h2>
+        <div class="block-header-line"></div>
+      </div>
+      <div class="biodata-grid">
+        <article class="section-card bio-card" data-aos="zoom-in">
+          <i class="fa-solid fa-user"></i>
+          <h3>Name</h3>
+          <p>Kovid Dutt Sharma</p>
+        </article>
+        <article class="section-card bio-card" data-aos="zoom-in" data-aos-delay="80">
+          <i class="fa-solid fa-calendar-days"></i>
+          <h3>Date of Birth</h3>
+          <p>10 August 2007</p>
+        </article>
+        <article class="section-card bio-card" data-aos="zoom-in" data-aos-delay="160">
+          <i class="fa-solid fa-school"></i>
+          <h3>School</h3>
+          <p>St. Anjani's Public School (basic schooling phase).</p>
+        </article>
+        <article class="section-card bio-card" data-aos="zoom-in" data-aos-delay="240">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:kovidduttsharma@gmail.com">kovidduttsharma@gmail.com</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="hobbies" class="section">
+      <div class="block-header-wrapper section-title" data-aos="fade-up">
+        <h2 class="block-header-title"><span class="block-header-marker">></span> Hobbies</h2>
+        <div class="block-header-line"></div>
+      </div>
+      <div class="chip-row" data-aos="fade-up" data-aos-delay="80">
+        <span class="tag-chip">#music</span>
+        <span class="tag-chip">#chess</span>
+        <span class="tag-chip">#games</span>
+        <span class="tag-chip">#sports</span>
+      </div>
+      <div class="hobby-grid">
+        <article class="section-card hobby-card" data-aos="flip-left">
+          <i class="fa-solid fa-music"></i>
+          <h3>Music</h3>
+          <p>Finding rhythm, focus, and inspiration.</p>
+        </article>
+        <article class="section-card hobby-card" data-aos="flip-left" data-aos-delay="80">
+          <i class="fa-solid fa-chess-knight"></i>
+          <h3>Chess</h3>
+          <p>Strategic thinking and long-game planning.</p>
+        </article>
+        <article class="section-card hobby-card" data-aos="flip-left" data-aos-delay="160">
+          <i class="fa-solid fa-gamepad"></i>
+          <h3>Games</h3>
+          <p>Teamwork, tactics, and smart decisions.</p>
+        </article>
+        <article class="section-card hobby-card" data-aos="flip-left" data-aos-delay="240">
+          <i class="fa-solid fa-futbol"></i>
+          <h3>Sports</h3>
+          <p>Energy, discipline, and healthy competition.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="block-header-wrapper section-title" data-aos="fade-up">
+        <h2 class="block-header-title"><span class="block-header-marker">></span> Education</h2>
+        <div class="block-header-line"></div>
+      </div>
+      <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+        <article class="timeline-card section-card">
+          <span class="timeline-marker"></span>
+          <h3>St. Anjani's Public School</h3>
+          <p>
+            This was a basic schooling stage for me. Most of my real growth now comes from self-study,
+            online learning, and consistent personal effort toward my Biotechnology goals.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="block-header-wrapper section-title" data-aos="fade-up">
+        <h2 class="block-header-title"><span class="block-header-marker">></span> Social Media & Contact</h2>
+        <div class="block-header-line"></div>
+      </div>
+      <div class="contact-grid">
+        <a class="section-card contact-card" href="https://instagram.com/kovidduttsharma" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram profile">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@kovidduttsharma</span>
+        </a>
+        <a class="section-card contact-card" href="mailto:kovidduttsharma@gmail.com" aria-label="Send an email">
+          <i class="fa-solid fa-envelope"></i>
+          <span>kovidduttsharma@gmail.com</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <aside class="floating-tools" aria-label="Quick tools">
+    <button id="floatingSoundBtn" class="floating-btn" type="button" aria-pressed="true" aria-label="Toggle sound effects">
+      <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+    </button>
+    <button id="floatingShareBtn" class="floating-btn" type="button" aria-label="Share this page">
+      <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+    </button>
+  </aside>
+
+  <nav class="mobile-dock" aria-label="Mobile quick actions">
+    <a href="#hero" class="dock-btn">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="https://instagram.com/kovidduttsharma" class="dock-btn" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+    <a href="mailto:kovidduttsharma@gmail.com" class="dock-btn">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Email</span>
+    </a>
+    <button id="shareBtnMobile" class="dock-btn dock-btn-button" type="button">
+      <i class="fa-solid fa-share-nodes"></i>
+      <span>Share</span>
+    </button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Kovid Dutt Sharma | Designed with a Breaking Bad Theme.</p>
+    <p class="credit-note">
+      Visual assets customized using your provided images.
+    </p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="achievements.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
